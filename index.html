@@ -11,9 +11,15 @@
     <meta name="keywords" content="HTML-CSS, Responsive, Kasper, Art" />
     <meta name="author" content="Mohamed Mekawy" />
     <title>Kasper | Template Two</title>
+    <!-- font-awesome icons -->
     <link rel="stylesheet" href="css/all.min.css" />
+    <!-- normalize css -->
     <link rel="stylesheet" href="css/normalize.css" />
+    <!-- main style sheet -->
     <link rel="stylesheet" href="css/kasper.css" />
+    <!-- main script -->
+    <script src="main.js" defer></script>
+    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +28,12 @@
     />
   </head>
   <body>
+    <button
+      title="scroll to the top"
+      id="scroll-to-top"
+      data-button="scrollToTop"
+    ></button>
+
     <header id="header">
       <nav id="navbar">
         <a id="logo" tabindex="0" href="#!">
@@ -54,6 +66,28 @@
         </div>
       </nav>
       <div class="container">
+        <div id="landing-imgs">
+          <img
+            data-landing-img="1"
+            data-active="false"
+            src="images/landing.webp"
+            alt=""
+          />
+          <img
+            data-landing-img="2"
+            data-active="true"
+            src="images/universe.webp"
+            alt=""
+          />
+          <img
+            data-landing-img="3"
+            data-active="false"
+            src="images/footer.webp"
+            alt=""
+          />
+        </div>
+
+        <button data-slide-to="before"></button>
         <section id="landing">
           <div class="slide-card">
             <h1 class="slide-card__title">
@@ -73,8 +107,10 @@
             <span class="bullet"></span>
           </div>
         </section>
+        <button data-slide-to="after"></button>
       </div>
     </header>
+
     <main id="main">
       <section id="services">
         <div class="section-heading">
@@ -170,14 +206,20 @@
           </p>
         </div>
         <div class="portfolio__sections">
-          <a href="#!" class="portfolio__section active">All</a>
-          <a href="#!" class="portfolio__section">App</a>
-          <a href="#!" class="portfolio__section">Photo</a>
-          <a href="#!" class="portfolio__section">Web</a>
-          <a href="#!" class="portfolio__section">Print</a>
+          <button data-filter-btn="all" class="portfolio__section active">
+            All
+          </button>
+          <button data-filter-btn="img1" class="portfolio__section">App</button>
+          <button data-filter-btn="img2" class="portfolio__section">
+            Photo
+          </button>
+          <button data-filter-btn="img3" class="portfolio__section">Web</button>
+          <button data-filter-btn="img4" class="portfolio__section">
+            Print
+          </button>
         </div>
         <div class="portfolio__images">
-          <div class="portfolio__card">
+          <div data-image-type="img2" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-01.webp"
@@ -188,7 +230,7 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img1" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-02.webp"
@@ -199,7 +241,7 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img3" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-03.webp"
@@ -210,14 +252,14 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img2" class="portfolio__card">
             <img loading="lazy" src="images/shuffle-04.webp" alt=" image" />
             <div class="card__content">
               <h3>Awesome Image</h3>
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img3" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-05.webp"
@@ -228,7 +270,7 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img4" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-06.webp"
@@ -239,7 +281,7 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img1" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-07.webp"
@@ -250,7 +292,7 @@
               <p>Photography</p>
             </div>
           </div>
-          <div class="portfolio__card">
+          <div data-image-type="img4" class="portfolio__card">
             <img
               loading="lazy"
               src="images/shuffle-08.webp"
@@ -365,34 +407,34 @@
                 Mauris blandit aliquet elit, eget tincidunt.
               </p>
             </div>
-            <div class="skills">
+            <div class="skills" data-skills-container>
               <div class="skill">
                 <p class="skill-name">adobe</p>
                 <div
+                  data-progress-width="80"
                   style="--percent: 80%; --percent-int: 80"
                   class="skill-prog"
-                ></div>
+                >
+                  <span></span>
+                </div>
               </div>
               <div class="skill">
                 <p class="skill-name">html&css</p>
-                <div
-                  style="--percent: 95%; --percent-int: 95"
-                  class="skill-prog"
-                ></div>
+                <div data-progress-width="95" class="skill-prog">
+                  <span></span>
+                </div>
               </div>
               <div class="skill">
                 <p class="skill-name">javascript</p>
-                <div
-                  style="--percent: 85%; --percent-int: 85"
-                  class="skill-prog"
-                ></div>
+                <div data-progress-width="85" class="skill-prog">
+                  <span></span>
+                </div>
               </div>
               <div class="skill">
                 <p class="skill-name">php</p>
-                <div
-                  style="--percent: 77%; --percent-int: 77"
-                  class="skill-prog"
-                ></div>
+                <div data-progress-width="77" class="skill-prog">
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
